@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Jost", serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.main-section {
+    width: 80%;
+    height: auto;
+    padding: 5rem;
+    background-color: #B2C9AD;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(145, 172, 143, 0.3);
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.7rem;
+}
+
+#header h1 {
+    font-size: 3.7rem;
+    text-transform: uppercase;
+    color: #353c34;
+}
+
+#header div {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header div input {
+    width: 60%;
+    padding: 0.7rem 1.3rem;
+    font-size: 1.7rem;
+    border: none;
+    outline: none;
+    border-radius: 20px 0px 0px 20px;
+}
+
+#header div button {
+    padding: 0.7rem 1.3rem;
+    font-size: 1.7rem;
+    border: none;
+    background-color: #353c34;
+    color: #fff;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.todo-items {
+    width: 50%;
+    margin: 4rem auto 0;
+}
+
+.individual-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(53, 60, 52, 0.3);
+    padding: 0.5rem 1.5rem;
+}
+
+.individual-items p {
+    font-size: 1.8rem;
+    color: #353c34;
+}
+
+.individual-items button {
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+}
+
+.individual-items:last-child {
+    border: none;
+}
+
+#footer {
+    margin-top: 3.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+#footer img {
+    width: 36px;
+}
+
+@media (width <= 500px) {
+    html {
+        font-size: 52%;
+    }
+    .main-section {
+        width: 90%;
+        padding: 3.2rem;
+    }
+    #header div {
+        width: 90%;
+    }
+    #header div input {
+        width: 70%;
+    }
+    .todo-items {
+        width: 80%;
+    }
+}

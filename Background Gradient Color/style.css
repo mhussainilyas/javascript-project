@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost", serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #3b72ce, #de861e);
+}
+
+section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 2.5rem;
+}
+
+button {
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 1rem 3.3rem;
+  border: none;
+  border-radius: 3rem;
+  font-size: 1.7rem;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0.8rem 2rem;
+  cursor: pointer;
+}
+
+.buttons button:first-child {
+  background-color: #3b72ce;
+}
+
+.buttons button:last-child {
+  background-color: #de861e;
+}
+
+#copy-btn {
+    display: inline-block;
+    margin-top: 1rem;
+  color: #eee;
+  border-radius: 0.3rem 1.3rem 0.3rem 1.3rem;
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+h2 {
+  color: #eee;
+  font-size: 1.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.code-copy {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  font-size: 17px;
+  border-radius: 10px;
+  border-left: 3px solid #eee;
+  width: 25vw;
+  color: #eee;
+  line-height: 1.5;
+}
+
+/* ----- toaster Style ----- */
+
+.toaster {
+  font-size: 1.7rem;
+  position: fixed;
+  top: 2rem;
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: translateY(-2rem);
+  z-index: 1000;
+}
+.toaster.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ======== Responsiveness ======== */
+
+@media (width <= 992px) {
+    .code-copy {
+        width: 50vw;
+    }
+}
+
+@media (width <= 500px) {
+    html {
+        font-size: 50%;
+    }
+    .code-copy {
+        width: 70vw;
+    }
+}
