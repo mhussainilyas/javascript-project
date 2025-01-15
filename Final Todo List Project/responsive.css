@@ -1,0 +1,66 @@
+/* ======== navbar ======== */
+
+@media (width <= 768px) {
+    html {
+        font-size: 53%;
+    }
+
+    .navbar .container {
+       padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 2.5rem;
+    }
+
+    /* ====== hero section ===== */
+
+    .hero-section .container {
+        padding: 2rem;
+
+        & h2 {
+            font-size: 5rem;
+        }
+
+        & p {
+            padding: 1rem;
+            width: 100%;
+        }
+    }
+
+    /* ====== about section ===== */
+
+    .about-section .container {
+        padding: 5rem 2rem;
+    }
+
+    /* ====== todo section ===== */
+
+    .todo-section .container {
+        padding: 5rem 2rem;
+    }
+
+    .todo-section .container form {
+        & input {
+            width: 70%;
+        }
+
+        & button {
+            width: 30%;
+        }
+    }
+
+    /* ====== todo container ===== */
+
+    .todo-section .container {
+        & .todo-container {
+            margin: 6rem 0;
+            gap: 3rem;
+
+            & .todo-item {
+                width: 45%;
+                padding: 2rem;
+            }
+        }
+    }
+}

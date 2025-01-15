@@ -1,82 +1,44 @@
-// Elements
-const todoInput = document.querySelector(".todo-input input");
-const todoBtn = document.querySelector(".todo-input button");
-const todoList = document.querySelector(".todo-list ul");
+// Elements References
+let todoInput = document.querySelector(".todo-input");
+let addBtn = document.querySelector(".todo-btn");
+let todoContainer = document.querySelector(".todo-container");
+let footerYear = document.querySelector("#footer-year")
 
-// Get todo data from local storage
-const getLocalTodoData = () => {
-  return JSON.parse(localStorage.getItem("todoData"));
-};
+// Event Handler
+const addTodoItems = (e) => {
+    e.preventDefault();
+    let todoValue = todoInput.value.trim();
 
-// Variables
-let localTodoData = getLocalTodoData() || [];
+    // creating Elements
+    let todoItem = document.createElement("div");
+    let li = document.createElement("li");
+    let todoBtnDiv = document.createElement("div");
+    let deleteBtn = document.createElement("button");
 
-// add todo item dynamically
-const addTodoDynamically = (element) => {
-  let todoItem = document.createElement("li");
-  todoItem.innerHTML = `${element} <button class="delete-btn">Delete</button>`;
-  todoList.appendChild(todoItem);
-};
+    // Adding Text Contents
+    li.textContent = todoValue;
+    deleteBtn.textContent = "Delete";
 
-// Functions
-const addTodoItem = () => {
-  // Get todo item value
-  let todoItemValue = todoInput.value.trim();
-  if (todoItemValue !== "" && !localTodoData.includes(todoItemValue)) {
-    // Add todo item to the local storage
-    localTodoData.push(todoItemValue);
-    localTodoData = [...new Set(localTodoData)];
-    localStorage.setItem("todoData", JSON.stringify(localTodoData));
+    // Adding Classes
+    todoItem.classList.add("todo-item");
+    todoBtnDiv.classList.add("todo-item--btn");
+    deleteBtn.classList.add("delete-btn");
 
-    // Add todo item to the list
-    addTodoDynamically(todoItemValue);
-  }
+    // Appending Elements
+    todoContainer.appendChild(todoItem);
+    todoItem.appendChild(li);
+    todoItem.appendChild(todoBtnDiv);
+    todoBtnDiv.appendChild(deleteBtn);
 
-  // Clear the input field
-  todoInput.value = "";
-};
+    // Blank Input Field
+    todoInput.value = "";
+}
 
-// Show todo items
-const showTodoItems = () => {
-  localTodoData.forEach((element) => {
-    addTodoDynamically(element);
-  });
-};
+// Latest footer year
+let year = new Date().getFullYear();
+footerYear.innerHTML = year;
 
-showTodoItems();
-
-// const removeTodoItem = (e) => {
-//   let removingElement = e.target.parentElement.textContent;
-//   let removingElementValue = removingElement.split(" ")[0];
-//   console.log(removingElementValue);
-//   let newRemovingElement = localTodoData.filter((item) => {
-//     return item !== removingElement;
-//   });
-//   console.log(newRemovingElement);
-// };
-
-const removeTodoItem = (e) => {
-  if (e.target.classList.contains("delete-btn")) {
-    let removingElement = e.target.parentElement.textContent.trim();
-    let removingElementValue = removingElement.replace("Delete", "").trim();
-
-    // Update local storage with filtered array
-    localTodoData = localTodoData.filter(
-      (item) => item !== removingElementValue
-    );
-    localStorage.setItem("todoData", JSON.stringify(localTodoData));
-
-    // Remove the element from DOM
-    e.target.parentElement.remove();
-  }
-};
-
-// Remove todo item
-todoList.addEventListener("click", (e) => {
-  removeTodoItem(e);
-});
-
-// Event listeners
-todoBtn.addEventListener("click", () => {
-  addTodoItem();
+// Event Listener
+addBtn.addEventListener("click", (e) => {
+    addTodoItems(e);
 });
