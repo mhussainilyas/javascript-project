@@ -32,6 +32,16 @@ const addTodoItems = (e) => {
 
     // Blank Input Field
     todoInput.value = "";
+
+    // Delete Button Functionality
+    const deleteTodo = (e) => {
+        let deletetodoitem = e.target.parentElement.parentElement;
+        deletetodoitem.remove();
+
+    }
+    todoBtnDiv.addEventListener("click", (e) => {
+        deleteTodo(e);
+    });
 }
 
 // Latest footer year
