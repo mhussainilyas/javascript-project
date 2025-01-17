@@ -110,7 +110,7 @@ main {
         width: 75vw;
 
         & .time p {
-            font-size: 6.2rem;
+            font-size: 5.8rem;
         }
     }
 }
