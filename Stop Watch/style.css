@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #3c4156;
+  --background-color: #21222d;
+  --helping-color: #e7678f;
+  --white-color: #eee;
+  --black-color: #111;
+  --jost-font: "Jost", serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+button {
+  width: 16rem;
+  line-height: 4rem;
+  display: inline-block;
+  font-size: 1.7rem;
+  border-radius: 7rem;
+  border: 2px solid var(--white-color);
+  background-color: var(--white-color);
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s linear;
+
+  &:hover {
+    background-color: transparent;
+    color: var(--helping-color);
+    border-color: var(--helping-color);
+  }
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--jost-font);
+  background-color: var(--bg-color);
+}
+
+main .container {
+  width: 25vw;
+  height: 80vh;
+  background-color: var(--background-color);
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0rem 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+main .container .stop-watch--box {
+  width: 100%;
+  height: 100%;
+}
+
+main .container .stop-watch--box .stop-watch--counter {
+  color: var(--helping-color);
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 9rem;
+}
+
+main .container .stop-watch--box .stop-watch--btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+main .container .stop-watch--box .stop-watch--text {
+  margin: 4rem 2rem;
+  max-height: 18rem;
+  overflow: auto;
+
+  & p {
+    color: var(--helping-color);
+    font-size: 1.8rem;
+    text-align: center;
+  }
+}
+
+/* 
+========================
+    Responsive Style
+========================
+*/
+
+/* --------- For Tablets -------- */
+
+@media (width < 992px) {
+  main .container {
+      width: 60vw;
+  }
+}
+
+/* --------- For Mobiles -------- */
+
+@media (width < 768px) {
+  html {
+    font: 50%;
+  }
+
+  button {
+    width: 12rem;
+  }
+
+  main .container {
+    width: 85vw;
+  }
+
+  main .container .stop-watch--box .stop-watch--counter {
+    margin: 1rem 0;
+  }
+
+  main .container .stop-watch--box .stop-watch--text {
+    max-height: 15rem;
+  }
+}
