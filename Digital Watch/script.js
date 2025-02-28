@@ -7,7 +7,7 @@ const currentTime = () => {
   let date = new Date().toDateString();
   p.innerHTML = `${time.slice(0, 8)} <sup class="para-sup">${time.slice(
     8,
-    10
+    11
   )}</sup>`;
   div.innerHTML = `${date.slice(8, 10)} ${date.slice(4, 7)} ${date.slice(
     11,
