@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+}
+
+h1 {
+  font-family: "Jost", serif;
+}
+
+p {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #23272e;
+  color: white;
+}
+
+.container {
+  width: 80vw;
+  text-align: center;
+}
+
+.container section {
+  margin: 30px auto;
+  padding: 40px;
+  width: 50%;
+  height: 30vh;
+  background-color: #1e2227;
+  border-radius: 10px;
+  box-shadow: 0px 0px 1rem rgba(255, 255, 255, 0.01);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  overflow: auto;
+}
+
+.container button {
+  border: none;
+  outline: none;
+  padding: 10px 25px;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: #42a5f5;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .container section {
+    width: 80%;
+    height: 25vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90vw;
+  }
+  .container section {
+    width: 100%;
+    height: 30vh;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+}
